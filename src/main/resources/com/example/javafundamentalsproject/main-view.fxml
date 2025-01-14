@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="533.0" prefWidth="735.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.javafundamentalsproject.Controllers.MainController">
+    <children>
+
+        <!-- Manage Showings Button -->
+        <Button fx:id="manageShowingsButton" layoutX="522.0" layoutY="16.0" mnemonicParsing="false" onAction="#handleShowingManagement" prefHeight="46.0" prefWidth="198.0" text="Manage Showings">
+            <opaqueInsets>
+                <Insets />
+            </opaqueInsets>
+        </Button>
+
+        <!-- View Sales History Button -->
+        <Button fx:id="viewSalesHistoryButton" layoutX="310.0" layoutY="16.0" mnemonicParsing="false" onAction="#handleSalesHistory" prefHeight="46.0" prefWidth="198.0" text="View Sales History" />
+
+        <!-- Sell Tickets Button -->
+        <Button fx:id="sellTicketsButton" layoutX="522.0" layoutY="16.0" mnemonicParsing="false" onAction="#handleTicketSales" prefHeight="46.0" prefWidth="198.0" text="Sell Tickets" />
+
+        <!-- Title Label -->
+        <Label layoutX="47.0" layoutY="26.0" text="Fantastic Cinema" textFill="WHITE">
+            <font>
+                <Font name="Arial" size="22.0" />
+            </font>
+        </Label>
+
+      
+      
+              <AnchorPane layoutY="76.0" prefHeight="458.0" prefWidth="735.0" style="-fx-background-color: lightblue;">
+            <children>
+                <!-- Welcome Message Label -->
+                <Label fx:id="welcomeLabel" layoutX="48.0" layoutY="76.0" text="Welcome &lt;name of user&gt;">
+                    <font>
+                        <Font size="15.0" />
+                    </font>
+                </Label>
+
+                      <!-- Role Information Label -->
+                <Label fx:id="roleLabel" layoutX="48.0" layoutY="129.0" text="You are logged in as a &lt;role&gt;">
+                    <font>
+                        <Font size="15.0" />
+                    </font>
+                </Label>
+
+                      <!-- Date and Time Label -->
+                <Label fx:id="dateTimeLabel" layoutX="48.0" layoutY="180.0" text="The current date and time is &lt;dateandtime&gt;">
+                    <font>
+                        <Font size="15.0" />
+                    </font>
+                </Label>
+            </children>
+        </AnchorPane>
+
+
+
+      <AnchorPane fx:id="contentPane" layoutY="76.0" prefHeight="458.0" prefWidth="735.0" />
+
+
+  </children>
+</AnchorPane>

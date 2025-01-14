@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="sellTicketsPane" prefHeight="458.0" prefWidth="735.0" style="-fx-background-color: lightblue;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.javafundamentalsproject.Controllers.SellTicketsController">
+   <children>
+      <Label layoutX="59.0" layoutY="14.0" text="Sell Tickets" textFill="#867070">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+       <TableView fx:id="sellTicketTableView" layoutX="60.0" layoutY="51.0" prefHeight="327.0" prefWidth="614.0">
+           <columns>
+               <TableColumn fx:id="startColumn" prefWidth="105.6" text="Start" />
+               <TableColumn fx:id="endColumn" prefWidth="108.8" text="End" />
+               <TableColumn fx:id="titleColumn" minWidth="0.0" prefWidth="316.8" text="Title" />
+               <TableColumn fx:id="seatsLeftColumn" prefWidth="84.0" text="Seats Left" />
+           </columns>
+       </TableView>
+      <Button fx:id="selectSeatsButton" layoutX="60.0" layoutY="418.0" mnemonicParsing="false" onAction="#selectSeatsButtonClick" text="Select Seat(s)" />
+      <Label layoutX="60.0" layoutY="389.0" text="Selected:" />
+      <Label fx:id="showingSelectedLabel" layoutX="112.0" layoutY="389.0" text="No showing selected">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+
+
+
+      <AnchorPane fx:id="selectSeatsPane" prefHeight="458.0" prefWidth="735.0" style="-fx-background-color: lightpink;" visible="false">
+         <children>
+
+             <VBox alignment="CENTER" fillWidth="false" layoutX="10.0" layoutY="99.0" prefHeight="261.0" prefWidth="39.0" spacing="24.0">
+                 <children>
+                     <Label text="Row 1" />
+                     <Label text="Row 2" />
+                     <Label text="Row 3" />
+                     <Label text="Row 4" />
+                     <Label text="Row 5" />
+                     <Label text="Row 6" />
+                 </children>
+             </VBox>
+
+
+
+             <!-- GridPane to represent the 6x12 seat grid -->
+             <GridPane fx:id="seatGrid" hgap="10" layoutX="61.0" layoutY="111.0" prefHeight="59.0" prefWidth="48.0" vgap="10">
+                 <!-- The seats will be programmatically added in the controller -->
+             </GridPane>
+
+             <!-- ListView to show selected seats -->
+             <ListView fx:id="selectedSeatsListView" layoutX="588.0" layoutY="85.0" prefHeight="339.0" prefWidth="126.0" />
+
+
+            <Label layoutX="15.0" layoutY="14.0" text="Sell tickets">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+            <Label fx:id="showingSelectedLabelAtSeats" layoutX="113.0" layoutY="47.0" text="&lt;name of showing&gt;">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font></Label>
+            <Label layoutX="15.0" layoutY="47.0" text="Selected showing: " />
+            <Button fx:id="confirmSellingTickets" layoutX="64.0" layoutY="412.0" mnemonicParsing="false" onAction="#sellTicketsButtonClick" prefHeight="26.0" prefWidth="156.0" text="Sell [n] tickets" />
+            <Button fx:id="cancelSellingTickets" layoutX="227.0" layoutY="412.0" mnemonicParsing="false" onAction="#cancelSellingTicketsButtonClick" prefHeight="26.0" prefWidth="67.0" text="Cancel" />
+            <TextField fx:id="customerNameTextField" layoutX="64.0" layoutY="376.0" prefHeight="26.0" prefWidth="222.0" promptText="Name of customer" />
+            <Label layoutX="588.0" layoutY="64.0" text="Selected seats:" />
+            <Label fx:id="errorLabelTicketSelling" layoutX="310.0" layoutY="430.0" text="Please select a showing, enter a customer name, and choose at least one seat." textFill="RED" visible="false" />
+         </children></AnchorPane>
+   </children>
+</AnchorPane>

@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="manageShowingsPane" prefHeight="458.0" prefWidth="735.0" style="-fx-background-color: lightgreen;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.javafundamentalsproject.Controllers.ManageShowingsController">
+
+    <children>
+        <Label fx:id="manageShowingsLabel" layoutX="60.0" layoutY="30.0" text="Manage Showings" textFill="#666464">
+            <font>
+                <Font size="20.0" />
+            </font>
+        </Label>
+
+        <Button fx:id="addShowingButton" layoutX="60.0" layoutY="404.0" mnemonicParsing="false" onAction="#showAddNewShowingPane" text="Add showing" />
+        <Button fx:id="editShowingButton" layoutX="162.0" layoutY="404.0" mnemonicParsing="false" onAction="#showEditShowingPane" text="Edit showing" />
+        <Button fx:id="deleteShowingButton" layoutX="264.0" layoutY="404.0" mnemonicParsing="false" onAction="#deleteShowing" text="Delete showing" />
+
+        <Label fx:id="roomLabel" layoutX="602.0" layoutY="401.0" text="Room 1" textFill="#666464">
+            <font>
+                <Font size="20.0" />
+            </font>
+        </Label>
+
+        <TableView fx:id="showingTableView" layoutX="58.0" layoutY="68.0" prefHeight="327.0" prefWidth="614.0">
+            <columns>
+                <TableColumn fx:id="startColumn" prefWidth="105.6" text="Start" />
+                <TableColumn fx:id="endColumn" prefWidth="108.8" text="End" />
+                <TableColumn fx:id="titleColumn" minWidth="0.0" prefWidth="316.8" text="Title" />
+                <TableColumn fx:id="seatsLeftColumn" prefWidth="84.0" text="Seats Left" />
+            </columns>
+        </TableView>
+
+
+
+        <!-- Nested AnchorPane for Add New Showing -->
+        <AnchorPane fx:id="addNewShowingPane" prefHeight="458.0" prefWidth="735.0" style="-fx-background-color: grey;" visible="false">
+            <children>
+                <TextField fx:id="addTitleField" layoutX="51.0" layoutY="80.0" prefHeight="26.0" prefWidth="390.0" promptText="Enter movie title here" />
+                <Label layoutX="51.0" layoutY="28.0" text="Add new showing">
+                    <font>
+                        <Font size="20.0" />
+                    </font>
+                </Label>
+                <DatePicker fx:id="addStartDatePicker" layoutX="50.0" layoutY="216.0" promptText="Date(MM/DD/YYYY)" />
+                <DatePicker fx:id="addEndDatePicker" layoutX="50.0" layoutY="293.0" promptText="Date (MM/DD/YYYY)" />
+                <TextField fx:id="addStartTimeField" layoutX="293.0" layoutY="216.0" promptText="Time (HH:MM)" />
+                <TextField fx:id="addEndTimeField" layoutX="291.0" layoutY="293.0" promptText="Time (HH:MM)" />
+                <Label layoutX="51.0" layoutY="187.0" text="Start Date and Time" />
+                <Label layoutX="53.0" layoutY="269.0" text="End Date and Time" />
+                <Button fx:id="confirmAddShowingButton" layoutX="50.0" layoutY="386.0" mnemonicParsing="false" onAction="#addShowing" prefHeight="26.0" prefWidth="114.0" text="Add showing" />
+                <Button fx:id="cancelAddShowingButton" layoutX="183.0" layoutY="386.0" mnemonicParsing="false" onAction="#cancelAddShowing" prefHeight="26.0" prefWidth="60.0" text="Cancel" />
+            <Label fx:id="addingErrorLabel" layoutX="293.0" layoutY="390.0" text="Please fill in all the fields in their correct formats." textFill="RED" visible="true" />
+            </children>
+        </AnchorPane>
+
+        <!-- Nested AnchorPane for Edit Showing -->
+        <AnchorPane fx:id="editShowingPane" prefHeight="458.0" prefWidth="735.0" style="-fx-background-color: lightyellow;" visible="false">
+            <children>
+                <TextField fx:id="editTitleField" layoutX="51.0" layoutY="80.0" prefHeight="26.0" prefWidth="390.0" promptText="Enter movie title here" />
+                <Label layoutX="51.0" layoutY="28.0" text="Edit showing">
+                    <font>
+                        <Font size="20.0" />
+                    </font>
+                </Label>
+                <DatePicker fx:id="editStartDatePicker" layoutX="50.0" layoutY="216.0" promptText="Date(MM/DD/YYYY)" />
+                <DatePicker fx:id="editEndDatePicker" layoutX="50.0" layoutY="293.0" promptText="Date(MM/DD/YYYY)" />
+                <TextField fx:id="editStartTimeField" layoutX="293.0" layoutY="216.0" promptText="Time (HH:MM)" />
+                <TextField fx:id="editEndTimeField" layoutX="291.0" layoutY="293.0" promptText="Time (HH:MM)" />
+                <Label layoutX="51.0" layoutY="187.0" text="Start Date and Time" />
+                <Label layoutX="53.0" layoutY="269.0" text="End Date and Time" />
+                <Button fx:id="confirmEditButton" layoutX="50.0" layoutY="386.0" mnemonicParsing="false" onAction="#editShowing" prefHeight="26.0" prefWidth="114.0" text="Confirm edit" />
+                <Button fx:id="cancelEditButton" layoutX="183.0" layoutY="386.0" mnemonicParsing="false" onAction="#cancelEditShowing" prefHeight="26.0" prefWidth="60.0" text="Cancel" />
+            <Label fx:id="editingErrorLabel" layoutX="293.0" layoutY="391.0" text="Please fill in all the fields in their correct formats." textFill="RED" visible="true" />
+            </children>
+        </AnchorPane>
+      <Label fx:id="deleteShowingErrorLabel" layoutX="380.0" layoutY="408.0" text="Can't delete, tickets are already sold" textFill="RED" visible="false" />
+    </children>
+</AnchorPane>
