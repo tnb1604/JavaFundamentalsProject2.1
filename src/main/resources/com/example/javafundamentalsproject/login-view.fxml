@@ -33,6 +33,6 @@
         <Button fx:id="loginButton" mnemonicParsing="false" text="Log in" GridPane.columnIndex="1" GridPane.rowIndex="2" onAction="#handleLogin"/>
         <TextField fx:id="usernameField" GridPane.columnIndex="1" />
         <PasswordField fx:id="passwordField" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-        <Label fx:id="errorMessageLabel" text="" GridPane.columnIndex="0" GridPane.rowIndex="3" GridPane.columnSpan="2" style="-fx-text-fill: red;"/>
+        <Label fx:id="errorMessageLabel" GridPane.columnIndex="0" GridPane.rowIndex="3" GridPane.columnSpan="2" style="-fx-text-fill: red;"/>
     </children>
 </GridPane>

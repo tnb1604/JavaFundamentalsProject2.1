@@ -39,8 +39,8 @@ public class MainController {
 
     private void updateLabels() {
         if (currentUser != null) {
-            welcomeLabel.setText("Welcome " + currentUser.getUsername());
-            roleLabel.setText("You are logged in as " + currentUser.getRole());
+            welcomeLabel.setText("Welcome " + currentUser.getUsername() + "!");
+            roleLabel.setText("You are logged in as " + currentUser.getRole() + ".");
         }
 
         LocalDateTime now = LocalDateTime.now();

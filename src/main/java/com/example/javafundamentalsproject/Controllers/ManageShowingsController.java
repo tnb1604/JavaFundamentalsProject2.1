@@ -25,6 +25,8 @@ import javafx.scene.control.TableCell;
 public class ManageShowingsController {
     @FXML public AnchorPane manageShowingsPane;
     public Button confirmEditButton;
+    public Label roomLabel;
+    public Button addShowingButton;
     @FXML private AnchorPane addNewShowingPane;
     @FXML private AnchorPane editShowingPane;
     @FXML private TableView<Showing> showingTableView;
